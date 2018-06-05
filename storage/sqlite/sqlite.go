@@ -24,7 +24,7 @@ type input struct {
 	query      string
 }
 
-// New returns an instance of the SQLite implementing the Service interface
+// New returns an instance of the SQLite storage which implements the Service interface
 func New(path string) (storage.Service, error) {
 
 	db, err := sql.Open("sqlite3", path)
@@ -34,17 +34,17 @@ func New(path string) (storage.Service, error) {
 
 	err = db.Ping()
 	if err != nil {
-		return nil, fmt.Errorf("failed to pind db: %v", err)
+		return nil, fmt.Errorf("failed to ping db: %v", err)
 	}
 
 	return &sqlite{db}, nil
-
 }
 
 func (s sqlite) Close() error {
 	return s.Close()
 }
 
+//
 func (s sqlite) Search(search string, lat float64, lng float64) ([]storage.Result, error) {
 	i := input{searchTerm: search, lat: lat, lng: lng}
 
@@ -52,7 +52,6 @@ func (s sqlite) Search(search string, lat float64, lng float64) ([]storage.Resul
 	i.query = genQuery(i.tokenized)
 
 	// converting []string to []interface for sql query
-	// need to rename this
 	qinterface := make([]interface{}, len(i.tokenized))
 
 	for i, v := range i.tokenized {
