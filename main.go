@@ -12,7 +12,6 @@ import (
 )
 
 func main() {
-
 	configPath := flag.String("config", "./config/config.json", "location of configuration file")
 
 	flag.Parse()
@@ -40,5 +39,4 @@ func main() {
 	} else {
 		log.Println("Server closed!")
 	}
-
 }

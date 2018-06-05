@@ -26,7 +26,6 @@ type input struct {
 
 // New returns an instance of the SQLite storage which implements the Service interface
 func New(path string) (storage.Service, error) {
-
 	db, err := sql.Open("sqlite3", path)
 	if err != nil {
 		return nil, fmt.Errorf("failed opening db connection: %v", err)
@@ -101,7 +100,6 @@ func (s sqlite) Search(search string, lat float64, lng float64) ([]storage.Resul
 }
 
 func genQuery(tokens []string) string {
-
 	baseq := "SELECT * FROM items WHERE "
 	var placeholders string
 

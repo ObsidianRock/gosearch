@@ -51,7 +51,6 @@ func responseHandler(h func(w http.ResponseWriter, r *http.Request) (interface{}
 }
 
 func (h handler) search(w http.ResponseWriter, r *http.Request) (interface{}, int, error) {
-
 	if r.Method != http.MethodPost {
 		return nil, http.StatusMethodNotAllowed, fmt.Errorf("method %s not allowed", r.Method)
 	}

@@ -3,7 +3,6 @@ package weigh
 import "testing"
 
 func TestRankScore(t *testing.T) {
-
 	tt := []struct {
 		name     string
 		itemName string

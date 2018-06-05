@@ -6,7 +6,6 @@ import (
 )
 
 func Tokenizer(term string) []string {
-
 	var tokenized []string
 
 	splitterms := strings.Fields(term)

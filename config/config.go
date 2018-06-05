@@ -20,7 +20,6 @@ type Config struct {
 }
 
 func Load(path string) (*Config, error) {
-
 	b, err := ioutil.ReadFile(path)
 	if err != nil {
 		return nil, fmt.Errorf("failed reading from file: %v", err)

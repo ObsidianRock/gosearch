@@ -25,7 +25,6 @@ func DistanceTo(latA, lonA, latB, lonB float64) int {
 
 // RankScore gives a rank based on number of matching terms in the item name and tokens
 func RankScore(itemName string, tokens []string) int {
-
 	var rank int
 	tokenize := common.Tokenizer(itemName)
 	for _, v := range tokenize {
@@ -38,7 +37,6 @@ func RankScore(itemName string, tokens []string) int {
 }
 
 func stringInSlice(s string, arr []string) bool {
-
 	for _, b := range arr {
 		if b == s {
 			return true

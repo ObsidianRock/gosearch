@@ -32,7 +32,6 @@ func (ms *multiSorter) Swap(i, j int) {
 }
 
 func (ms *multiSorter) Less(i, j int) bool {
-
 	p, q := &ms.results[i], &ms.results[j]
 
 	var k int
@@ -52,7 +51,6 @@ func (ms *multiSorter) Less(i, j int) bool {
 
 //SortResults will sort based on decreasing rank and increasing distance
 func SortResults(res []storage.Result) {
-
 	increasingDistance := func(c1, c2 *storage.Result) bool {
 		return c1.Distance < c2.Distance
 	}
