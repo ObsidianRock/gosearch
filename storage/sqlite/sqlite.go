@@ -43,7 +43,7 @@ func (s sqlite) Close() error {
 	return s.Close()
 }
 
-//
+//Search return a slice of Result based on search query
 func (s sqlite) Search(search string, lat float64, lng float64) ([]storage.Result, error) {
 	i := input{searchTerm: search, lat: lat, lng: lng}
 

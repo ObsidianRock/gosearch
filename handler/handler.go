@@ -25,6 +25,7 @@ var inputFields = map[string]bool{
 	"lng":        true,
 }
 
+// New returns a new HTTP handler for gosearch
 func New(prefix string, st storage.Service) http.Handler {
 	mux := http.NewServeMux()
 	h := handler{prefix, st}

@@ -49,7 +49,7 @@ func (ms *multiSorter) Less(i, j int) bool {
 	return ms.less[k](p, q)
 }
 
-//SortResults will sort based on decreasing rank and increasing distance
+//SortResults will sort based on decreasing rank score and increasing distance
 func SortResults(res []storage.Result) {
 	increasingDistance := func(c1, c2 *storage.Result) bool {
 		return c1.Distance < c2.Distance

@@ -5,6 +5,7 @@ import (
 	"unicode"
 )
 
+// Tokenizer return a slice of discrete words from a search term
 func Tokenizer(term string) []string {
 	var tokenized []string
 

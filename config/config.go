@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 )
 
+// Config holds the configuration parameters
 type Config struct {
 	Server struct {
 		Host string
@@ -19,6 +20,7 @@ type Config struct {
 	}
 }
 
+// Load returns a configuration from a JSON file
 func Load(path string) (*Config, error) {
 	b, err := ioutil.ReadFile(path)
 	if err != nil {
