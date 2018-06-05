@@ -1,23 +1,9 @@
 package common
 
 import (
-	"log"
-	"regexp"
 	"strings"
+	"unicode"
 )
-
-var reg *regexp.Regexp
-
-func init() {
-
-	r, err := regexp.Compile(`([^a-zA-Z0-9])+`)
-
-	if err != nil {
-		log.Fatalf("failed to compile regular expression: %v", err)
-	}
-
-	reg = r
-}
 
 func Tokenizer(term string) []string {
 
@@ -28,7 +14,9 @@ func Tokenizer(term string) []string {
 	for _, text := range splitterms {
 
 		// removing any non-alphanumeric characters in the word
-		processedString := reg.ReplaceAllString(text, "")
+		processedString := strings.TrimFunc(text, func(r rune) bool {
+			return !unicode.IsLetter(r) && !unicode.IsNumber(r)
+		})
 
 		if processedString == "" {
 			continue
