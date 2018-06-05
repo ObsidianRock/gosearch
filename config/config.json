@@ -1,0 +1,12 @@
+{   
+    "server": {
+        "host": "127.0.0.1",
+        "port": "8080"
+    },
+    "SQLite": {
+        "path" :"db.sqlite3"
+    },
+    "options": {
+        "prefix": "http://localhost:8080/"
+    }
+}
